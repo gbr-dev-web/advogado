@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
+import styles from "./Header.module.css";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -62,17 +64,15 @@ export default function Header() {
   return (
     <>
       {menuOpen && (
-        <div className="fixed inset-0 z-10 backdrop-blur-md bg-white/30 dark:bg-gray-900/30"></div>
+        <div className="fixed inset-0 z-10 backdrop-blur-md bg-gray-900/30"></div>
       )}
-      <header className="absolute top-0 left-0 w-full bg-white z-40 dark:bg-gray-900">
+      <header className="absolute top-0 left-0 w-full z-40 bg-gray-900">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-2">
           <div className="flex h-16 items-center justify-between">
             {/* LOGO & title */}
             <div className="flex-1 flex items-center">
-              <a
-                className="hidden sm:block text-teal-600 dark:text-teal-300"
-                href="#"
-              >
+              {/* qualquer coisa é só tirar o hidden de um e apagar o outro */}
+              <a className="hidden sm:block text-teal-300" href="#">
                 <span className="sr-only">Home</span>
                 <svg
                   className="h-8"
@@ -89,16 +89,16 @@ export default function Header() {
 
               {/* Novo container com título e descrição */}
               <div className="ml-3 flex flex-col">
-                <h1 className="text-base lg:text-lg font-semibold text-gray-900 dark:text-white">
+                <h1 className="text-base lg:text-lg font-semibold text-white">
                   Meu Título Aqui
                 </h1>
-                <p className="text-xs lg:text-sm text-gray-500 dark:text-gray-400">
+                <p className="text-xs lg:text-sm text-white/75">
                   Pequena descrição abaixo do título.
                 </p>
               </div>
             </div>
 
-            {/* MENU DESKTOP */}
+            {/* Navigation DESKTOP */}
             <nav className="hidden md:block mr-4">
               <ul className="flex items-center text-lg gap-4">
                 {menuItems.map((item) => (
@@ -116,7 +116,7 @@ export default function Header() {
                               openDropdown === item.label ? null : item.label
                             )
                           }
-                          className="flex items-center gap-1 text-gray-500 transition px-4 py-4 hover:text-gray-700 dark:text-white dark:hover:text-white/75"
+                          className="flex items-center gap-1 transition px-4 py-4 text-white hover:text-white/75"
                         >
                           {item.label}
                           <ChevronDown
@@ -131,13 +131,13 @@ export default function Header() {
 
                         {(openDropdown === item.label ||
                           hoveredDropdown === item.label) && (
-                          <div className="absolute z-30 w-56 rounded-md border border-gray-100 bg-white shadow-lg dark:border-gray-800 dark:bg-gray-900">
+                          <div className="absolute z-30 w-56 rounded-md border shadow-lg border-gray-800 bg-gray-900">
                             <div className="p-2">
                               {item.dropdown.map((sub, idx) => (
                                 <a
                                   key={idx}
                                   href={sub.href}
-                                  className="block rounded-lg px-4 py-2 text-base text-gray-500 hover:bg-gray-50 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                                  className="block rounded-lg px-4 py-2 text-base text-gray-400 hover:bg-gray-800 hover:text-gray-300"
                                 >
                                   {sub.label}
                                 </a>
@@ -149,7 +149,7 @@ export default function Header() {
                     ) : (
                       <a
                         href={item.href}
-                        className="text-gray-500 transition px-4 py-4 hover:text-gray-700 dark:text-white dark:hover:text-white/75"
+                        className=" transition px-4 py-4 text-white hover:text-white/75"
                       >
                         {item.label}
                       </a>
@@ -159,19 +159,22 @@ export default function Header() {
               </ul>
             </nav>
 
-            {/* USUÁRIO (SOMENTE DESKTOP) */}
+            {/* USUÁRIO (SOMENTE DESKTOP)(OPCIONAL) */}
             <div className="relative hidden md:block" ref={menuRef}>
               <button
                 ref={buttonRef}
                 type="button"
                 onClick={() => setIsOpen(!isOpen)}
-                className="overflow-hidden rounded-full border border-gray-300 shadow-inner dark:border-gray-600 cursor-pointer"
+                className="w-10 h-10 overflow-hidden rounded-full border shadow-inner border-gray-600 cursor-pointer"
               >
                 <span className="sr-only">Toggle dashboard menu</span>
-                <img
+                {/* pode usar um svg ao inves disso se quiser, isso é só um exemplo */}
+                <Image
                   src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1770&auto=format&fit=crop"
                   alt="Avatar"
-                  className="size-10 object-cover"
+                  width={40}
+                  height={40}
+                  className="object-cover w-full h-full"
                 />
               </button>
 
@@ -183,7 +186,7 @@ export default function Header() {
                   <div className="p-2">
                     <a
                       href="#"
-                      className="block rounded-lg px-4 py-2 text-base text-gray-500 hover:bg-gray-50 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                      className="block rounded-lg px-4 py-2 text-base text-gray-400 hover:bg-gray-800 hover:text-gray-300"
                       role="menuitem"
                     >
                       My profile
@@ -191,7 +194,7 @@ export default function Header() {
 
                     <a
                       href="#"
-                      className="block rounded-lg px-4 py-2 text-base text-gray-500 hover:bg-gray-50 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                      className="block rounded-lg px-4 py-2 text-base text-gray-400 hover:bg-gray-800 hover:text-gray-300"
                       role="menuitem"
                     >
                       My data
@@ -199,7 +202,7 @@ export default function Header() {
 
                     <a
                       href="#"
-                      className="block rounded-lg px-4 py-2 text-base text-gray-500 hover:bg-gray-50 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                      className="block rounded-lg px-4 py-2 text-base text-gray-400 hover:bg-gray-800 hover:text-gray-300"
                       role="menuitem"
                     >
                       Team settings
@@ -208,7 +211,7 @@ export default function Header() {
                     <form method="POST" action="#">
                       <button
                         type="submit"
-                        className="flex w-full items-center gap-2 rounded-lg px-4 py-2 text-red-700 hover:bg-red-50 dark:text-red-500 dark:hover:bg-red-600/10"
+                        className="flex w-full items-center gap-2 rounded-lg px-4 py-2 text-red-500 hover:bg-red-600/10"
                         role="menuitem"
                       >
                         <svg
@@ -237,7 +240,7 @@ export default function Header() {
             <div className="md:hidden">
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="rounded p-2 text-gray-600 transition hover:text-gray-600/75 dark:text-white dark:hover:text-white/75"
+                className="rounded p-2 transition text-white hover:text-white/75"
                 aria-label="Toggle menu"
               >
                 {menuOpen ? (
@@ -279,7 +282,7 @@ export default function Header() {
 
           {/* MENU MOBILE VISÍVEL QUANDO ATIVO */}
           {menuOpen && (
-            <nav className="relative z-20 md:hidden mt-2 border-t border-gray-200 dark:border-gray-700 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md">
+            <nav className="relative z-20 md:hidden mt-2 border-t border-gray-700 bg-gray-900/90 backdrop-blur-md">
               y
               <ul className="space-y-2 text-sm">
                 {menuItems.map((item) => (
@@ -287,7 +290,7 @@ export default function Header() {
                     {/* Item com dropdown */}
                     {item.dropdown ? (
                       <div>
-                        <span className="flex items-center justify-between px-4 py-3 text-lg font-medium text-gray-700 dark:text-white">
+                        <span className="flex items-center justify-between px-4 py-3 text-lg font-medium text-white">
                           {item.label}
                           <ChevronDown className="w-4 h-4" />
                         </span>
@@ -296,7 +299,7 @@ export default function Header() {
                             <li key={idx}>
                               <a
                                 href={sub.href}
-                                className="block rounded px-4 py-2 text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+                                className="block rounded px-4 py-2 text-gray-300 hover:bg-gray-800"
                               >
                                 {sub.label}
                               </a>
@@ -307,7 +310,7 @@ export default function Header() {
                     ) : (
                       <a
                         href={item.href}
-                        className="text-lg block rounded px-4 py-3 text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-800"
+                        className="text-lg block rounded px-4 py-3 text-white hover:bg-gray-800"
                       >
                         {item.label}
                       </a>
