@@ -5,9 +5,15 @@
     --color-color-main: #ffffff;  /* cor dos textos principais */ 
     --color-white-75: rgba(255, 255, 255, 0.75); /* text color dos desc, dropdown e menu mobile */
     --color-hover: #1f2937; /* hover de dropdowns e menu mobile */
+    --color-primary: #4F39F6 /* spans, botoes */
   }
 
   /* hover dos texts principais, personalizavel ex. scale... */
 .hover-text:hover {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.hover-btn:hover {
+    background-color: rgba(79, 57, 246, 0.75);
     color: rgba(255, 255, 255, 0.75);
 }

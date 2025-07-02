@@ -67,7 +67,8 @@ export default function Header() {
       )}
       {/* altere a fonte de todos os elementos pelo header */}
       {/* para tornalo com fundo transparente basta remover o bg, shadow e relative e adicinar: absolute top-0 left-0 */}
-      <header className="relative w-full z-40 bg-bgcolor shadow-[0_4px_6px_-1px_rgba(0,0,0,0.4)]">
+      <header className="absolute top-0 left-0 w-full z-40 bg-bgcolor shadow-[0_4px_6px_-1px_rgba(0,0,0,0.4)]">
+      {/* <header className="absolute top-0 left-0 w-full z-40 ">  */}
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-2">
           <div className="flex h-16 items-center justify-between">
             {/* LOGO & title */}
