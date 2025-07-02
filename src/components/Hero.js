@@ -40,14 +40,14 @@ export default function Hero() {
               <a
                 className="inline-block rounded border px-5 py-3 font-medium shadow-sm transition-colors border-primary text-white-75 hover:bg-primary hover:text-color-main"
                 href="#"
-              > 
+              >
                 Learn More
               </a>
             </div>
           </div>
 
           {/* Coluna da direita: imagem, logo, vazio... */}
-          <div className="mx-auto max-w-md">
+          <div className="relative z-10 mx-auto max-w-md">
             <Image
               src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1770&auto=format&fit=crop"
               alt="Avatar"
@@ -57,6 +57,8 @@ export default function Hero() {
             />
           </div>
         </div>
+
+       
       </section>
     </>
   );
