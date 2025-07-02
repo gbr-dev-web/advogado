@@ -300,7 +300,7 @@ export default function Header() {
                             <li key={idx}>
                               <a
                                 href={sub.href}
-                                className="block rounded px-4 py-2 text-gray-300 hover:bg-hover"
+                                className="block rounded px-4 py-2 text-white-75 hover:bg-hover"
                               >
                                 {sub.label}
                               </a>
