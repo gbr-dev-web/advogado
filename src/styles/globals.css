@@ -1,2 +1,12 @@
 @import "tailwindcss";
 
+@theme {
+    --color-bgcolor: #111827; /* bg-gray-900 */
+    --color-color-main: #ffffff;  /* text-white */ 
+    --color-white-75: rgba(255, 255, 255, 0.75); /* desc, dropdown e menu mobile */
+    --color-hover: #1f2937; /* hover:bg-gray-800, dropdown e menu mobile */
+  }
+
+.hover-text:hover {
+    color: rgba(255, 255, 255, 0.75);
+}

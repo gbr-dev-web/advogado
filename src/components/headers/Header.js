@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
-import styles from "./Header.module.css";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,20 +14,6 @@ export default function Header() {
   const [hoveredDropdown, setHoveredDropdown] = useState(null);
 
   const dropdownRefs = useRef({});
-
-  // Fecha dropdown ao clicar fora (se estiver aberto por clique)
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (openDropdown) {
-        const ref = dropdownRefs.current[openDropdown];
-        if (ref && !ref.contains(event.target)) {
-          setOpenDropdown(null);
-        }
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [openDropdown]);
 
   const menuItems = [
     { label: "About", href: "#" },
@@ -44,6 +29,20 @@ export default function Header() {
     { label: "Projects", href: "#" },
     { label: "Blog", href: "#" },
   ];
+
+  // Fecha dropdown ao clicar fora (se estiver aberto por clique)
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (openDropdown) {
+        const ref = dropdownRefs.current[openDropdown];
+        if (ref && !ref.contains(event.target)) {
+          setOpenDropdown(null);
+        }
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [openDropdown]);
 
   // Fecha o dropdown ao clicar fora
   useEffect(() => {
@@ -64,9 +63,11 @@ export default function Header() {
   return (
     <>
       {menuOpen && (
-        <div className="fixed inset-0 z-10 backdrop-blur-md bg-gray-900/30"></div>
+        <div className="fixed inset-0 z-10 backdrop-blur-md bg-bgcolor/30"></div>
       )}
-      <header className="absolute top-0 left-0 w-full z-40 bg-gray-900">
+      {/* altere a fonte de todos os elementos pelo header */}
+      {/* para tornalo com fundo transparente basta remover o bg e o shadow e adicinar: absolute top-0 left-0 */}
+      <header className="w-full z-40 bg-bgcolor shadow-[0_4px_6px_-1px_rgba(0,0,0,0.4)]">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-2">
           <div className="flex h-16 items-center justify-between">
             {/* LOGO & title */}
@@ -89,10 +90,10 @@ export default function Header() {
 
               {/* Novo container com título e descrição */}
               <div className="ml-3 flex flex-col">
-                <h1 className="text-base lg:text-lg font-semibold text-white">
+                <h1 className="text-base lg:text-lg font-semibold text-color-main">
                   Meu Título Aqui
                 </h1>
-                <p className="text-xs lg:text-sm text-white/75">
+                <p className="text-xs lg:text-sm text-white-75">
                   Pequena descrição abaixo do título.
                 </p>
               </div>
@@ -116,7 +117,7 @@ export default function Header() {
                               openDropdown === item.label ? null : item.label
                             )
                           }
-                          className="flex items-center gap-1 transition px-4 py-4 text-white hover:text-white/75"
+                          className="flex items-center gap-1 transition px-4 py-4 text-color-main hover-text"
                         >
                           {item.label}
                           <ChevronDown
@@ -131,13 +132,13 @@ export default function Header() {
 
                         {(openDropdown === item.label ||
                           hoveredDropdown === item.label) && (
-                          <div className="absolute z-30 w-56 rounded-md border shadow-lg border-gray-800 bg-gray-900">
+                          <div className="absolute z-30 w-56 rounded-md border shadow-lg border-gray-800 bg-bgcolor">
                             <div className="p-2">
                               {item.dropdown.map((sub, idx) => (
                                 <a
                                   key={idx}
                                   href={sub.href}
-                                  className="block rounded-lg px-4 py-2 text-base text-gray-400 hover:bg-gray-800 hover:text-gray-300"
+                                  className="block rounded-lg px-4 py-2 text-base text-white-75 hover:bg-hover hover:text-color-main"
                                 >
                                   {sub.label}
                                 </a>
@@ -149,7 +150,7 @@ export default function Header() {
                     ) : (
                       <a
                         href={item.href}
-                        className=" transition px-4 py-4 text-white hover:text-white/75"
+                        className=" transition px-4 py-4 text-color-main hover-text"
                       >
                         {item.label}
                       </a>
@@ -180,13 +181,13 @@ export default function Header() {
 
               {isOpen && (
                 <div
-                  className="absolute end-0 z-10 mt-0.5 w-56 rounded-md border border-gray-100 bg-white shadow-lg dark:border-gray-800 dark:bg-gray-900"
+                  className="absolute end-0 z-10 mt-0.5 w-56 rounded-md border shadow-lg border-gray-800 bg-bgcolor"
                   role="menu"
                 >
                   <div className="p-2">
                     <a
                       href="#"
-                      className="block rounded-lg px-4 py-2 text-base text-gray-400 hover:bg-gray-800 hover:text-gray-300"
+                      className="block rounded-lg px-4 py-2 text-base text-white-75 hover:bg-hover hover:text-color-main"
                       role="menuitem"
                     >
                       My profile
@@ -194,7 +195,7 @@ export default function Header() {
 
                     <a
                       href="#"
-                      className="block rounded-lg px-4 py-2 text-base text-gray-400 hover:bg-gray-800 hover:text-gray-300"
+                      className="block rounded-lg px-4 py-2 text-base text-white-75 hover:bg-hover hover:text-color-main"
                       role="menuitem"
                     >
                       My data
@@ -202,7 +203,7 @@ export default function Header() {
 
                     <a
                       href="#"
-                      className="block rounded-lg px-4 py-2 text-base text-gray-400 hover:bg-gray-800 hover:text-gray-300"
+                      className="block rounded-lg px-4 py-2 text-base text-white-75 hover:bg-hover hover:text-color-main"
                       role="menuitem"
                     >
                       Team settings
@@ -240,7 +241,7 @@ export default function Header() {
             <div className="md:hidden">
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="rounded p-2 transition text-white hover:text-white/75"
+                className="rounded p-2 transition text-color-main hover-text"
                 aria-label="Toggle menu"
               >
                 {menuOpen ? (
@@ -282,7 +283,7 @@ export default function Header() {
 
           {/* MENU MOBILE VISÍVEL QUANDO ATIVO */}
           {menuOpen && (
-            <nav className="relative z-20 md:hidden mt-2 border-t border-gray-700 bg-gray-900/90 backdrop-blur-md">
+            <nav className="relative z-20 md:hidden mt-2 border-t border-gray-700 bg-bgcolor backdrop-blur-md">
               y
               <ul className="space-y-2 text-sm">
                 {menuItems.map((item) => (
@@ -290,7 +291,7 @@ export default function Header() {
                     {/* Item com dropdown */}
                     {item.dropdown ? (
                       <div>
-                        <span className="flex items-center justify-between px-4 py-3 text-lg font-medium text-white">
+                        <span className="flex items-center justify-between px-4 py-3 text-lg font-medium text-color-main">
                           {item.label}
                           <ChevronDown className="w-4 h-4" />
                         </span>
@@ -299,7 +300,7 @@ export default function Header() {
                             <li key={idx}>
                               <a
                                 href={sub.href}
-                                className="block rounded px-4 py-2 text-gray-300 hover:bg-gray-800"
+                                className="block rounded px-4 py-2 text-gray-300 hover:bg-hover"
                               >
                                 {sub.label}
                               </a>
@@ -310,7 +311,7 @@ export default function Header() {
                     ) : (
                       <a
                         href={item.href}
-                        className="text-lg block rounded px-4 py-3 text-white hover:bg-gray-800"
+                        className="text-lg block rounded px-4 py-3 text-color-main hover:bg-hover"
                       >
                         {item.label}
                       </a>
