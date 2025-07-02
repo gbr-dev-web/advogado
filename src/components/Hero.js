@@ -18,7 +18,7 @@ export default function Hero() {
         <div className="relative z-10 mx-auto w-screen mt-2 md:mt-0 max-w-screen-xl grid grid-cols-1 md:grid-cols-2 items-center gap-6 sm:gap-4 px-4 sm:px-6 lg:px-8">
           {/* Coluna da esquerda: texto */}
           <div className="max-w-prose text-left">
-            <h1 className="max-[500px]:text-3xl text-4xl font-bold font-serif text-color-main sm:text-5xl ">
+            <h1 className="max-[350px]:text-2xl max-[500px]:text-3xl text-4xl font-bold font-serif text-color-main sm:text-5xl ">
               Understand user flow and
               <strong className="text-primary"> increase </strong>
               conversions
