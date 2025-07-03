@@ -1,15 +1,17 @@
 export default function Valores() {
   return (
     <>
-      <section class="bg-white dark:bg-gray-900">
-        <div class="container px-6 py-10 mx-auto">
-          <h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
-            explore our awesome <span class="text-blue-500">Components</span>
+      <section class="bg-bgcolor relative">
+        {/* Container com espaçamento interno e centralização horizontal */}
+        <div class="container px-6 py-14 mx-auto">
+          {/* Título principal da seção */}
+          <h1 class="text-2xl font-semibold font-serif text-center capitalize lg:text-3xl text-color-main">
+            <span class="text-color-main">Valores</span>
           </h1>
-
+          {/* Grid de cards com responsividade: 1 coluna no mobile, 2 no md, 3 no xl */}
           <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-16 md:grid-cols-2 xl:grid-cols-3">
-            <div class="flex flex-col items-center p-6 space-y-3 text-center bg-gray-100 rounded-xl dark:bg-gray-800">
-              <span class="inline-block p-3 text-blue-500 bg-blue-100 rounded-full dark:text-white dark:bg-blue-500">
+            <div className="flex flex-col items-center p-6 space-y-3 text-center rounded-xl bg-bgcolor border-2 border-primary transition-transform duration-300 hover:scale-105">
+              <span class="inline-block p-3 rounded-full text-color-main bg-primary">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="w-6 h-6"
@@ -26,11 +28,11 @@ export default function Valores() {
                 </svg>
               </span>
 
-              <h1 class="text-xl font-semibold text-gray-700 capitalize dark:text-white">
+              <h1 class="text-xl font-semibold capitalize text-color-main">
                 Copy & paste components
               </h1>
 
-              <p class="text-gray-500 dark:text-gray-300">
+              <p class="text-white-75">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Provident ab nulla quod dignissimos vel non corrupti doloribus
                 voluptatum eveniet
@@ -56,8 +58,8 @@ export default function Valores() {
               </a>
             </div>
 
-            <div class="flex flex-col items-center p-6 space-y-3 text-center bg-gray-100 rounded-xl dark:bg-gray-800">
-              <span class="inline-block p-3 text-blue-500 bg-blue-100 rounded-full dark:text-white dark:bg-blue-500">
+            <div className="flex flex-col items-center p-6 space-y-3 text-center rounded-xl bg-bgcolor border-2 border-primary transition-transform duration-300 hover:scale-105">
+              <span class="inline-block p-3  rounded-full text-color-main bg-primary">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="w-6 h-6"
@@ -74,11 +76,11 @@ export default function Valores() {
                 </svg>
               </span>
 
-              <h1 class="text-xl font-semibold text-gray-700 capitalize dark:text-white">
+              <h1 class="text-xl font-semibold  capitalize text-color-main">
                 Zero Configuration
               </h1>
 
-              <p class="text-gray-500 dark:text-gray-300">
+              <p class="text-white-75">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Provident ab nulla quod dignissimos vel non corrupti doloribus
                 voluptatum eveniet
@@ -104,8 +106,8 @@ export default function Valores() {
               </a>
             </div>
 
-            <div class="flex flex-col items-center p-6 space-y-3 text-center bg-gray-100 rounded-xl dark:bg-gray-800">
-              <span class="inline-block p-3 text-blue-500 bg-blue-100 rounded-full dark:text-white dark:bg-blue-500">
+            <div className="flex flex-col items-center p-6 space-y-3 text-center rounded-xl bg-bgcolor border-2 border-primary transition-transform duration-300 hover:scale-105">
+              <span class="inline-block p-3  rounded-full text-color-main bg-primary">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="w-6 h-6"
@@ -122,11 +124,11 @@ export default function Valores() {
                 </svg>
               </span>
 
-              <h1 class="text-xl font-semibold text-gray-700 capitalize dark:text-white">
+              <h1 class="text-xl font-semibold  capitalize text-color-main">
                 Simple & clean designs
               </h1>
 
-              <p class="text-gray-500 dark:text-gray-300">
+              <p class="text-white-75">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Provident ab nulla quod dignissimos vel non corrupti doloribus
                 voluptatum eveniet

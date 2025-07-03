@@ -56,9 +56,7 @@ export default function Hero() {
               className="object-cover w-full h-full"
             />
           </div>
-        </div>
-
-       
+        </div>     
       </section>
     </>
   );
