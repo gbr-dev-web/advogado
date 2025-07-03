@@ -3,7 +3,7 @@ export default function CTA() {
     <>
       <section class="bg-bgcolor">
         <div class="container flex flex-col items-center px-4 py-12 mx-auto text-center">
-          <h2 class="max-w-2xl mx-auto text-2xl font-semibold tracking-tight xl:text-3xl text-color-main">
+          <h2 class="max-w-2xl mx-auto text-2xl font-semibold tracking-tight xl:text-4xl font-serif text-color-main">
             Bring your Business to the {" "}
             <span class="text-primary">next level.</span>
           </h2>
