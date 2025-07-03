@@ -1,0 +1,36 @@
+✅ SEO CHECKLIST - Next.js
+
+[HEAD]
+- <title>
+- <meta name="description">
+- <meta name="robots">
+- <link rel="canonical">
+
+[SOCIAL META TAGS]
+- Open Graph (og:title, og:description, og:image, og:url)
+- Twitter Card
+
+[FAVICON & WEBMANIFEST]
+- /favicon.ico
+- /site.webmanifest
+- /apple-touch-icon.png
+- /favicon-32x32.png
+- /favicon-16x16.png
+
+[ACESSIBILIDADE]
+- Imagens com alt
+- Tags semânticas (header, main, footer)
+- Lazy loading com next/image
+
+[PERFORMANCE]
+- Sitemap.xml
+- robots.txt
+
+[MOBILE]
+- <meta name="viewport">
+- Layout responsivo
+
+[GOOGLE & SEO TÉCNICO]
+- Google Analytics
+- Google Search Console
+- Schema.org JSON-LD
