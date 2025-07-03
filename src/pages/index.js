@@ -6,7 +6,7 @@ import Precos from "@/components/sections/Precos";
 import CTA from "@/components/sections/CTA";
 import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
-
+import Footer from "@/components/sections/Footer";
 export default function Home() {
   return (
     <div>
@@ -20,7 +20,7 @@ export default function Home() {
         <FAQ />
         <Contact />
       </main>
-      <footer></footer>
+      <Footer />
     </div>
   );
 }
