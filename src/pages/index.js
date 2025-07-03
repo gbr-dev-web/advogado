@@ -5,6 +5,7 @@ import Valores from "@/components/sections/Valores";
 import Precos from "@/components/sections/Precos";
 import CTA from "@/components/sections/CTA";
 import FAQ from "@/components/sections/FAQ";
+import Contact from "@/components/sections/Contact";
 
 export default function Home() {
   return (
@@ -15,8 +16,9 @@ export default function Home() {
         <About />
         <Valores />
         <Precos />
-        <CTA/>
-        <FAQ/>
+        <CTA />
+        <FAQ />
+        <Contact />
       </main>
       <footer></footer>
     </div>
