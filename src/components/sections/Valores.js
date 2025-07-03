@@ -6,7 +6,7 @@ export default function Valores() {
         <div class="container px-6 py-14 mx-auto">
           {/* Título principal da seção */}
           <h1 class="text-2xl font-semibold font-serif text-center capitalize lg:text-3xl text-color-main">
-            <span class="text-color-main">Valores</span>
+            Valores
           </h1>
           {/* Grid de cards com responsividade: 1 coluna no mobile, 2 no md, 3 no xl */}
           <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-16 md:grid-cols-2 xl:grid-cols-3">
