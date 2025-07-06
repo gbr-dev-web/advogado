@@ -1,10 +1,11 @@
 import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
-import Valores from "@/components/sections/Valores";
+import Especialidades from "@/components/sections/Especialidades";
 import CTA from "@/components/sections/CTA";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
+import Depoimentos from "@/components/sections/Depoimentos";
 
 export default function Home() {
   return (
@@ -13,7 +14,8 @@ export default function Home() {
       <main className="">
         <Hero />
         <About />
-        <Valores />
+        <Especialidades />
+        <Depoimentos />
         <CTA />
         <Contact />
       </main>
