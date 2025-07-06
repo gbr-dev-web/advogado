@@ -77,7 +77,7 @@ export default function Header() {
             </div>
 
             {/* Navigation DESKTOP */}
-            <nav className="hidden md:block mr-4">
+            <nav className="hidden md:block">
               <ul className="flex items-center text-lg gap-4">
                 {menuItems.map((item) => (
                   <li key={item.label} className="relative">

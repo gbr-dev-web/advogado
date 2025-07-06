@@ -3,7 +3,7 @@
 
 @theme {
   /* cores */
-  --color-bgcolor: #111827; /* cor de fundo */
+  --color-bgcolor: #171717; /* cor de fundo */
   --color-color-main: #ffffff; /* cor dos textos principais */
   --color-white-75: rgba(
     255,
@@ -12,10 +12,14 @@
     0.75
   ); /* text color dos desc, dropdown e menu mobile */
   --color-hover: #1f2937; /* hover de dropdowns e menu mobile */
-  --color-primary: #4f39f6; /* spans, botoes */
+  --color-primary: #5E747F; /* spans, botoes */
   /*fontes */
   --font-prata: "Prata", Georgia, Cambria, "Times New Roman", Times, serif;
   --font-inter: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* hover dos texts principais, personalizavel ex. scale... */

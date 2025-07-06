@@ -24,7 +24,7 @@ export default function Hero() {
         <div className="relative z-10 mx-auto md:h-full w-screen pt-20 pb-10 md:pt-0 md:pb-0 max-w-screen-xl grid grid-cols-1 md:grid-cols-2 items-center gap-6 sm:gap-4 px-4 sm:px-6 lg:px-8">
           {/* Coluna da esquerda: texto */}
           <div className="max-w-prose text-left">
-            <h1 className="w-fit font-prata text-2xl sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-[#926129] via-[#F0E495] to-[#926129]">
+            <h1 className="w-fit font-prata text-3xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-[#926129] via-[#F0E495] to-[#926129]">
               Dr. Rafael Menezes
             </h1>
 
@@ -39,12 +39,9 @@ export default function Hero() {
                 href="https://wa.me/seunumerodetelefone"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-auto p-3.5 hover-btn bg-gray-500 rounded-[10px] flex justify-center items-center gap-2.5  transition-all duration-200 shadow-[4px_4px_0px_rgba(0,0,0,0.25)]"
+                className="w-auto py-3 px-2.5 md:p-3.5 hover-btn bg-primary rounded-[6px] md:rounded-[10px] flex justify-center items-center gap-2.5 transition-all duration-200 shadow-[4px_4px_0px_rgba(0,0,0,0.25)]"
               >
-                <p className="justify-start text-white text-lg font-semibold font-inter">
-                  Consulta Gratuita
-                </p>
-                <div className="w-8 h-8 relative ">
+                <div className="w-6 h-6 md:w-8 md:h-8 relative ">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 258">
                     <defs>
                       <linearGradient
@@ -82,6 +79,9 @@ export default function Hero() {
                     ></path>
                   </svg>
                 </div>
+                <p className="justify-start text-white text-base md:text-lg font-bold font-inter">
+                  Consulta Gratuita
+                </p>
               </a>
             </div>
           </div>
