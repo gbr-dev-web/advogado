@@ -20,6 +20,7 @@ export default function Header() {
     { label: "Sobre", href: "#sobre" },
     { label: "Especialidades", href: "#especialidades" },
     { label: "Depoimentos", href: "#depoimentos" },
+    { label: "Ebook", href: "#ebook" },
     { label: "Contatos", href: "#contatos" },
   ];
 
@@ -200,6 +201,7 @@ export default function Header() {
                               <a
                                 href={sub.href}
                                 className="block rounded px-4 py-2 text-white-75 hover:bg-hover"
+                                onClick={() => setMenuOpen(false)} // fecha menu aqui
                               >
                                 {sub.label}
                               </a>
@@ -211,6 +213,7 @@ export default function Header() {
                       <a
                         href={item.href}
                         className="text-lg block rounded px-4 py-4 text-color-main hover:bg-hover"
+                        onClick={() => setMenuOpen(false)} // fecha menu aqui
                       >
                         {item.label}
                       </a>
