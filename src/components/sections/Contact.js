@@ -1,56 +1,31 @@
-import Image from "next/image";
-
 export default function Contact() {
   return (
     <>
       <section
+        id="contatos"
         className="min-h-screen bg-cover"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')",
+          backgroundImage: "url('/assets/contact.jpg')",
         }}
       >
         <div class="flex flex-col min-h-screen bg-black/80">
           <div class="container flex flex-col flex-1 px-6 py-12 mx-auto">
-            <div class="flex-1 lg:flex lg:items-center lg:-mx-6">
+            <div class="flex-1 lg:flex lg:items-center lg:-mx-6 font-inter">
               {/* coluna um */}
               <div class="text-white lg:w-1/2 lg:mx-6">
-                <h1 class="text-2xl font-serif font-semibold capitalize lg:text-3xl">
-                  Get a quote
-                </h1>
+                <h2 class="text-2xl md:text-3xl font-prata">
+                  Onde me encontrar
+                </h2>
 
-                <p class="max-w-xl mt-6 text-white/75">
-                  Ask us everything and we would love to hear from you
+                <p class="max-w-xl mt-2 text-white/75">
+                  Atendimento presencial em São Paulo e online para todo o
+                  Brasil
                 </p>
 
-                <div class="mt-6 space-y-4 md:mt-8">
-                  <p class="flex items-start -mx-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="w-6 h-6 mx-2 text-white"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
+                <h3 class="text-white-75 font-semibold mt-4">Contatos</h3>
 
-                    <span class="mx-2 text-white truncate w-72">
-                      Cecilia Chapman 711-2880 Nulla St. Mankato Mississippi
-                      96522
-                    </span>
-                  </p>
-
+                {/* contacts */}
+                <div class="space-y-2 mt-2">
                   <p class="flex items-start -mx-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -93,17 +68,18 @@ export default function Contact() {
                     </span>
                   </p>
                 </div>
-                {/* follow us */}
-                <div class="mt-6 md:mt-8">
-                  <h3 class="text-gray-300 ">Follow us</h3>
 
-                  <div class="flex mt-4 -mx-1.5 ">
+                {/* follow us */}
+                <div class="mt-4">
+                  <h3 class="text-gray-300 ">Me Siga</h3>
+
+                  <div class="flex mt-2 -mx-1.5 ">
                     <a
                       class="mx-1.5 text-white transition-colors duration-300 transform hover:text-primary"
                       href="#"
                     >
                       <svg
-                        class="w-10 h-10 fill-current"
+                        class="w-8 h-8 fill-current"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -172,64 +148,49 @@ export default function Contact() {
                     </a>
                   </div>
                 </div>
-                {/* maps */}
-                <div className="mt-8 w-full aspect-video rounded-lg overflow-hidden border-2 border-white">
-                  <iframe
-                    className="w-full h-full"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.7776890829534!2d-46.648794184423234!3d-23.577802168670596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c38aa3c3e3%3A0x67c2fc16598254ab!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1719893889823!5m2!1spt-BR!2sbr"
-                    style={{ border: 0 }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  ></iframe>
-                </div>
               </div>
               {/* coluna dois */}
-              <div class="mt-8 lg:w-1/2 lg:mx-6">
-                <div class="w-full px-8 py-10 mx-auto overflow-hidden  shadow-2xl rounded-xl bg-bgcolor lg:max-w-xl">
-                  <h1 class="text-xl font-medium font-serif text-white ">
-                    Contact form
-                  </h1>
+              <div class="lg:w-1/2 mt-6 lg:mt-0 lg:mx-auto items-center">
+                <div class="w-full px-4 py-6 sm:px-8 sm:py-10 mx-auto shadow-2xl rounded-xl bg-bgcolor lg:max-w-xl">
+                  <h3 class="text-2xl font-semibold font-inter text-white ">
+                    Fale Comigo
+                  </h3>
 
-                  <p class="mt-2 text-white-75">
-                    Ask us everything and we would love to hear from you
-                  </p>
-
-                  <form class="mt-6">
+                  <form class="mt-4">
                     <div class="flex-1">
-                      <label class="block mb-2 text-sm text-gray-200">
-                        Full Name
+                      <label class="block mb-2 text-base text-white-75">
+                        Seu Nome
                       </label>
                       <input
                         type="text"
                         placeholder="John Doe"
-                        class="block w-full px-5 py-3 mt-2 border rounded-md bg-bgcolor text-gray-300 border-gray-600 focus:ring-blue-300 focus:ring-opacity-40 focus:border-blue-300 focus:outline-none focus:ring"
+                        class="block w-full px-5 py-3 mt-2 border rounded-md bg-bgcolor text-white border-gray-600 focus:ring-gray-500 focus:ring-1"
                       />
                     </div>
 
                     <div class="flex-1 mt-6">
-                      <label class="block mb-2 text-sm text-gray-200">
-                        Email address
+                      <label class="block mb-2 text-base text-white-75">
+                        Endereço de Email
                       </label>
                       <input
                         type="email"
                         placeholder="johndoe@example.com"
-                        class="block w-full px-5 py-3 mt-2 border rounded-md bg-bgcolor text-gray-300 border-gray-600 focus:ring-blue-300 focus:ring-opacity-40 focus:border-blue-300 focus:outline-none focus:ring"
+                        class="block w-full px-5 py-3 mt-2 border rounded-md bg-bgcolor text-white border-gray-600 focus:ring-gray-500 focus:ring-1"
                       />
                     </div>
 
                     <div class="w-full mt-6">
-                      <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">
-                        Message
+                      <label class="block mb-2 text-base text-white-75">
+                        Mensagem
                       </label>
                       <textarea
-                        class="block w-full h-32 px-5 py-3 mt-2  placeholder-gray-400  border rounded-md md:h-48 bg-bgcolor text-gray-300 border-gray-600 focus:ring-blue-300 focus:ring-opacity-40 focus:border-blue-300 focus:outline-none focus:ring"
+                        class="block w-full h-32 px-5 py-3 mt-2 border rounded-md md:h-48 bg-bgcolor text-white border-gray-600 focus:ring-gray-500 focus:ring-1"
                         placeholder="Message"
                       ></textarea>
                     </div>
 
-                    <button class="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-primary rounded-md hover:bg-primary/75 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">
-                      get in touch
+                    <button class="w-full px-6 py-3 mt-6 text-base font-semibold text-white transition-all duration-200 shadow-[4px_4px_0px_rgba(0,0,0,0.25)] bg-primary rounded-md hover-btn">
+                      Enviar Mensagem
                     </button>
                   </form>
                 </div>
